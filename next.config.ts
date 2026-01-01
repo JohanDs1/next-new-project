@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "images7.alphacoders.com",
+        hostname: "static.wikia.nocookie.net",
       },
     ],
   },
