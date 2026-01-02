@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme{
+  --color-primary: #0F0; /* Blue-800 */
+}
+
 @layer base {
   h1 {
     @apply text-4xl font-bold text-center my-8;

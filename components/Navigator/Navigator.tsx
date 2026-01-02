@@ -7,7 +7,7 @@ interface Props {
 
 const Navigator = ({ pathnames }: Props) => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 my-2">
       {pathnames.map((route, i) => (
         <Link key={i} href={route.pathname} className="hover:underline">{route.name}</Link>
       ))}

@@ -1,4 +1,5 @@
-import { Character } from "@/app/characters/models";
+import { blurredImage } from "@/app/constants";
+import { Character } from "@/app/information/characters/models";
 import Image from "next/image";
 
 interface Props {
@@ -18,7 +19,9 @@ const Card = ({ data }: Props) => {
         alt={name}
         width={300}
         height={300}
-        className="rounded-t-md"
+        className="rounded-t-md w-auto h-auto object-contain"
+        blurDataURL={blurredImage}
+        placeholder="blur"
       />
       <div className="p-4 max-w-full">
         <p>Name: {name}</p>

@@ -4,12 +4,12 @@ export const Routes = {
     name: "Home",
   },
   characters: {
-    pathname: "/characters",
+    pathname: "/information/characters",
     name: "Characters",
   },
-  teams: {
-    pathname: "/teams",
-    name: "Teams",
+  akatsukis: {
+    pathname: "/information/akatsukis",
+    name: "Akatsukis",
   },
 };
 

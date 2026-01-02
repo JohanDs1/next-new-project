@@ -1,9 +1,16 @@
-export interface CharacterResponse {
-  characters: Character[];
+export interface Pagination {
   currentPage: number;
   pageSize: number;
   total: number;
 }
+
+export interface CharacterResponse extends Pagination {
+characters: Character[];
+}
+export interface akatsukiResponse extends Pagination {
+  akatsuki: Character[];
+}
+
 
 export interface Character {
   id: number;
