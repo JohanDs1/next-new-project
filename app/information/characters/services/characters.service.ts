@@ -1,4 +1,4 @@
-import { CharacterResponse, akatsukiResponse } from "../models";
+import { Character, CharacterResponse, akatsukiResponse } from "../models";
 const url = "https://dattebayo-api.onrender.com";
 
 export const getCharacters = async (): Promise<CharacterResponse> => {
@@ -6,7 +6,7 @@ export const getCharacters = async (): Promise<CharacterResponse> => {
     const response = await fetch(`${url}/characters`);
     if (!response.ok) {
       console.error("No se pudo traer los datos", response.status);
-      return {characters: [], currentPage: 0, pageSize: 0, total: 0};
+      return { characters: [], currentPage: 0, pageSize: 0, total: 0 };
     }
     const data = await response.json();
     return data;
@@ -15,7 +15,7 @@ export const getCharacters = async (): Promise<CharacterResponse> => {
       "Error al traer los datos:",
       error instanceof Error && error.message
     );
-    return {characters: [], currentPage: 0, pageSize: 0, total: 0};
+    return { characters: [], currentPage: 0, pageSize: 0, total: 0 };
   }
 };
 export const getAkatsukis = async (): Promise<akatsukiResponse> => {
@@ -23,7 +23,7 @@ export const getAkatsukis = async (): Promise<akatsukiResponse> => {
     const response = await fetch(`${url}/akatsuki`);
     if (!response.ok) {
       console.error("No se pudo traer los datos", response.status);
-      return {akatsuki: [], currentPage: 0, pageSize: 0, total: 0};
+      return { akatsuki: [], currentPage: 0, pageSize: 0, total: 0 };
     }
     const data = await response.json();
     return data;
@@ -32,8 +32,24 @@ export const getAkatsukis = async (): Promise<akatsukiResponse> => {
       "Error al traer los datos:",
       error instanceof Error && error.message
     );
-    return {akatsuki: [], currentPage: 0, pageSize: 0, total: 0};
+    return { akatsuki: [], currentPage: 0, pageSize: 0, total: 0 };
   }
 };
 
-
+export const getAkatsukiByID = async (id: number): Promise<Character> => {
+  try {
+    const response = await fetch(`${url}/akatsuki/${id}`);
+    if (!response.ok) {
+      console.error("No se pudo traer los datos", response.status);
+      return {} as Character;
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(
+      "Error al traer los datos:",
+      error instanceof Error && error.message
+    );
+    return {} as Character;
+  }
+};

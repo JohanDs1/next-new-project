@@ -1,5 +1,8 @@
+"use client";
+
 import { blurredImage } from "@/app/constants";
 import { Character } from "@/app/information/characters/models";
+import { getAkatsukiByID } from "@/app/information/characters/services";
 import Image from "next/image";
 
 interface Props {
@@ -7,13 +10,21 @@ interface Props {
 }
 
 const Card = ({ data }: Props) => {
-  const { personal, name, images } = data;
+  const { personal, name, images, id } = data;
   const { clan, birthdate } = personal;
 
   const clanText = Array.isArray(clan) ? clan.join(", ") : clan;
 
+  const handleClick = async (id: number) => {
+    const akatsuki = await getAkatsukiByID(id);
+    console.log(akatsuki);
+  };
+
   return (
-    <div className="border rounded-md ring-1 ring-blue-800 shadow-md">
+    <div
+      className="border rounded-md ring-1 ring-blue-800 shadow-md"
+      onClick={() => handleClick(id)}
+    >
       <Image
         src={images?.[0]}
         alt={name}
