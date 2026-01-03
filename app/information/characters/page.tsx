@@ -13,7 +13,7 @@ const Characters = async () => {
   return (
     <>
       <Navigator pathnames={[Routes.home, Routes.akatsukis]} />
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
         {characters.map((character) => {
           return <Card data={character} key={character.id} />;
         })}

@@ -1,11 +1,11 @@
 export const Routes = {
   home: {
     pathname: "/",
-    name: "Home",
+    name: "Inicio",
   },
   characters: {
     pathname: "/information/characters",
-    name: "Characters",
+    name: "Personajes",
   },
   akatsukis: {
     pathname: "/information/akatsukis",

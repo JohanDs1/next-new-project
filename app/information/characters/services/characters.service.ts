@@ -36,9 +36,9 @@ export const getAkatsukis = async (): Promise<akatsukiResponse> => {
   }
 };
 
-export const getAkatsukiByID = async (id: number): Promise<Character> => {
+export const getCharacterByID = async (id: number): Promise<Character> => {
   try {
-    const response = await fetch(`${url}/akatsuki/${id}`);
+    const response = await fetch(`${url}/characters/${id}`);
     if (!response.ok) {
       console.error("No se pudo traer los datos", response.status);
       return {} as Character;
