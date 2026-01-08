@@ -4,7 +4,6 @@ import { blurredImage } from "@/app/constants";
 import { Character } from "@/app/information/characters/models";
 import { getCharacterByID } from "@/app/information/characters/services";
 import Image from "next/image";
-
 interface Props {
   data: Character;
 }
@@ -17,7 +16,6 @@ const Card = ({ data }: Props) => {
 
   const handleClick = async (id: number) => {
     const akatsuki = await getCharacterByID(id);
-    console.log(akatsuki);
   };
 
   return (
@@ -28,7 +26,7 @@ const Card = ({ data }: Props) => {
       <Image
         src={images?.[0]}
         alt={name}
-        width={name === 'Hinoki' ? 1000 : 300}
+        width={300}
         height={300}
         className="rounded-t-md w-auto h-auto object-contain"
         blurDataURL={blurredImage}
