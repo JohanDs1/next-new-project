@@ -1,14 +1,20 @@
-import Navigator from "@/components/Navigator/Navigator";
-import { Routes } from "./models/routes.model";
+import { Card, CardHeader } from "@/components/ui/card";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black dark:text-white">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <h1>Bienvenido a tu camino ninja</h1>
-        <h2>Que quieres ver?</h2>
-        <Navigator pathnames={[Routes.characters, Routes.akatsukis]} />
-      </main>
-    </div>
+    <main className="max-w-7xl mx-auto flex  flex-col justify-center text-white">
+      <div className="flex justify-start w-full py-4 max-sm:pl-2">
+        <Image
+          src="/naruto/uzumaki.png"
+          alt="Insignia Uzumaki"
+          width={50}
+          height={50}
+        />
+      </div>
+      <div className="flex justify-center mx-auto">
+        <Image src="/naruto/naruto.png" alt="Naruto" width={350} height={250} title="Imagen hecha por satoru0031bbq" />
+      </div>
+    </main>
   );
 }
